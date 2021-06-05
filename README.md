@@ -1,7 +1,7 @@
 # EventManager_Event_Delegate_System
 
 A simple implementation of generic and type-safe event-delegate system in C++11.
-This EventManager allows any callback function from listener class to subscribe to any event.
+This implementation allows any callback function from listener class to subscribe to any event.
 
 
 How to Use:
