@@ -11,14 +11,6 @@ snippet from sample test-application:
 ```
 #include "EventManager.h"
 
-class B {
-public:
-  void listener() {
-    printf("Listener of B called\n");
-  }
-
-};
-
 class C {
 public:
   void listener() {
@@ -48,26 +40,22 @@ int main() {
   myEventManager->createEvent("testEvent2");  
   myEventManager->createEvent("testEvent3");  
 
-  myEventManager->subscribe("testEvent1", obj1, &B::listener);
   myEventManager->subscribe("testEvent1", obj2, &C::listener);
   myEventManager->subscribe("testEvent1", obj3, &D::listener);
   
-  myEventManager->subscribe("testEvent2", obj2, &C::listener);
   myEventManager->subscribe("testEvent2", obj3, &D::listener);
+  
   myEventManager->subscribe("testEvent3", obj3, &D::listenerV1);
   
   myEventManager->execute("testEvent1");
   myEventManager->execute("testEvent2");  
   myEventManager->execute("testEvent3");
   
-  
   return 0;
 }
 ```
-
-The EventManager can be used as a header only file (discarding the .cpp), if you have C++17, and you modify the following in the header:
-change the line:
+**The EventManager can be used as a header only file (discarding the .cpp), if you have C++17, and you modify the following in the header:**
 static EventManager *_Instance;
-//Change this to:
+**//Change this to:**
 inline static EventManager *_Instance;
 
