@@ -65,8 +65,10 @@ int main() {
 }
 ```
 
-***The EventManager can be used as a header only file (discarding the .cpp), if you have C++17, and you modify the following in the header:
+***
+The EventManager can be used as a header only file (discarding the .cpp), if you have C++17, and you modify the following in the header:
 change the line:
 static EventManager *_Instance;
-To:
-inline static EventManager *_Instance;***
+//Change this to:
+inline static EventManager *_Instance;
+***
